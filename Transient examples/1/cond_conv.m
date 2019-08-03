@@ -1,14 +1,14 @@
 dt = 1;
 dx = 0.01;
-tf=100000;
+tf=10000;
 t = 0:dt:tf;
 x = 0:dx:1;
 %copper
 g_dot=0;
 alpha = 1.11*(10^-4);
 T2 = 293;
-T1 = 320;
-T_inf = 298;
+T1 = 400;
+T_inf = 320;
 K=401;
 h=63;
 rho=8960;
@@ -28,3 +28,6 @@ for i=2:tf/dt
         T(i,j)= T(i-1,j)+dt/dx*(alpha*(T(i-1,j-1)-2*T(i-1,j)+T(i-1,j+1))+g_dot/rho/Cp);
     end
 end
+        
+
+
